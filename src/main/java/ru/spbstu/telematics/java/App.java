@@ -30,7 +30,7 @@ class TrafficLightController implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             trafficLight.turnOnGreen();
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt(); 
             }
@@ -55,7 +55,7 @@ class CarGenerator implements Runnable {
             Direction direction = Direction.values()[random.nextInt(Direction.values().length)];
             new Thread(new Car(direction, trafficLight)).start();
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

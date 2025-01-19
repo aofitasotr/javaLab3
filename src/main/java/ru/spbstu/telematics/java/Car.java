@@ -12,10 +12,9 @@ public class Car implements Runnable{
     @Override
     public void run(){
         try {
-            System.out.println("Подъехала машина " + "№" 
-                + Thread.currentThread().getId() + " c траекторией " + direction);
+            System.out.println("Подъехала машина c траекторией " + direction);
             trLight.addCar(direction);
-            Thread.sleep(200);
+            Thread.sleep(10);
             trLight.removeCar(direction);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

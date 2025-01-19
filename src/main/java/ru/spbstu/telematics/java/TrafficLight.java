@@ -53,8 +53,7 @@ public class TrafficLight {
         try {
             if (carsCount.get(direction) > 0) {
                 carsCount.put(direction, carsCount.get(direction) - 1);
-                System.out.println("Уехала машина " 
-                    + "№" + Thread.currentThread().getId() + " по траектории " + direction);
+                System.out.println("Уехала машина по траектории " + direction);
             }
         } finally {
             lock.unlock();
@@ -73,7 +72,7 @@ public class TrafficLight {
                     System.out.println("ЗЕЛЕНЫЙ СВЕТ направлениям " + allowedToMove1 
                         + " и " + allowedToMove2);
                     condition.signalAll(); // Разрешаем движение всем ожидающим машинам
-                    Thread.sleep(1000); // Имитация времени зеленого света
+                    Thread.sleep(2000); // Имитация времени зеленого света
 
                     directionPriorities.add(allowedToMove2);
                     directionPriorities.add(allowedToMove1); 
